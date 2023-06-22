@@ -6,5 +6,8 @@
 <launch>
   <include file="$(find rplidar_ros)/launch/rplidar.launch" />
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rplidar_ros)/rviz/rplidar.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rplidar_ros)/rviz/rplidar.rviz">
+  </node>
+  <node name="obst_direc_node" pkg="rplidar_ros" type="obst_direc.py" output="screen">
+  </node>
 </launch>

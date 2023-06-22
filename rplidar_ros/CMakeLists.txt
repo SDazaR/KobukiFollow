@@ -13,6 +13,13 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rosconsole
   sensor_msgs
+  geometry_msgs
+  joy
+  kobuki_safety_controller
+  rospy
+  std_msgs
+  yocs_velocity_smoother
+  rviz
 )
 
 include_directories(
@@ -29,6 +36,11 @@ target_link_libraries(rplidarNode ${catkin_LIBRARIES})
 add_executable(rplidarNodeClient src/client.cpp)
 target_link_libraries(rplidarNodeClient ${catkin_LIBRARIES})
 
+
+catkin_install_python(PROGRAMS src/obst_direc.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 install(TARGETS rplidarNode rplidarNodeClient
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
@@ -39,3 +51,6 @@ install(DIRECTORY launch rviz sdk
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   USE_SOURCE_PERMISSIONS
 )
+
+
+

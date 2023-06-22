@@ -23,7 +23,6 @@ def callback (msg):
 
 	inv_inten = list([max(inten)-x for x in inten])
 	
-	print (ang_max, ang_min, int((ang_max-ang_min)/2))
 	try:
 		direc = roundBy(sum(degrees[i]*inv_inten[i]for i in range(len(inten)))/sum(inv_inten),1)
 	except:
@@ -31,14 +30,11 @@ def callback (msg):
 		
 	dist = sum(inten[direc-15:direc+15])/30
 
-	#print(degrees) 
-	print(inten) 
-	print(direc, dist)
 	
 
 	
 	ref_a = (ang_max-ang_min)/2
-	ref_l = 0.6
+	ref_l = 0.75
 	
 	
 	Kp_a = -0.09
@@ -64,7 +60,8 @@ def callback (msg):
 		c_l = Kp_l*e_l
 	 
 	
-	print (c_a, c_l)
+	print ("Señal de control angular: ", c_a)
+	print ("Señal de control lineal : ", c_l)
 	
 	twist = Twist()
 	twist.linear.x = c_l
