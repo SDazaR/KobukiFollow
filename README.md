@@ -28,7 +28,7 @@ Para un uso sencillo, se recomiendan los siguientes pasos:
 Para instalar ROS noetic colocque en la terminal el siguiente código:
 
 ```
-wget -c https://raw.githubusercontent.com/qboticslabs/ros_install_noetic/master/ros_install_noetic.sh && chmod +x ./ros_install_noetic.sh && ./ros_install_noetic.sh
+sudo wget -c https://raw.githubusercontent.com/qboticslabs/ros_install_noetic/master/ros_install_noetic.sh && sudo chmod +x ./ros_install_noetic.sh && sudo ./ros_install_noetic.sh
 ```
 
 **3.** Llevar repositorio git como paquetes a un src en un workspace.
