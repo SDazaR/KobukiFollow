@@ -64,5 +64,4 @@ Y nuevamente asegurando que el Lidar fue conectado al puerto USB0.
 
 Se deberían entonces tener cuatro terminales corriendo los archivos launch. (El launch de kobuki_node corre el master)
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0k3onq1sAHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+[![Comprehensive Markdown Crash Course](https://img.youtube.com/vi/0k3onq1sAHE/mqdefault.jpg)](https://youtu.be/0k3onq1sAHE "Título alternativo")
