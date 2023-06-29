@@ -15,6 +15,8 @@ En el proyecto final se espera integrar, mediante ROS noetic, dos bases Kobuki, 
 
 ***
 
+## Instrucciones para ejecutar el proyecto
+
 Aquí se muestran los cuatro paquetes utilizados en el proyecto, éstos se pueden copiar a un workspace. 
 
 Para un uso sencillo, se recomiendan los siguientes pasos:
@@ -27,7 +29,6 @@ Para instalar ROS noetic colocque en la terminal el siguiente código:
 
 ```
 wget -c https://raw.githubusercontent.com/qboticslabs/ros_install_noetic/master/ros_install_noetic.sh && chmod +x ./ros_install_noetic.sh && ./ros_install_noetic.sh
-
 ```
 
 **3.** Llevar repositorio git como paquetes a un src en un workspace.
@@ -38,40 +39,34 @@ wget -c https://raw.githubusercontent.com/qboticslabs/ros_install_noetic/master/
 
 ```
 sudo apt install liborocos-kdl-dev
-
 ```
 
 **6.** Desde el directorio de workspace, hacer un rosdep:
 
 ```
 rosdep install --from-paths src --ignore-src -r -y
-
 ```
 
 **7.** Ejecutar el catkin_make:
 
 ```
 catkin_make
-
 ```
 
 **8.** Ahora, el proyecto puede ser ejecutado de forma diferente dependiendo de si se quiere una base seguidora, o teleoperada. En cualquiera de los dos casos, debe iniciarse el nodo de kobuki.
 
 ```
 roslaunch kobuki_node minimal.launch
-
 ```
 
 **9.** Si se quiere el modo teleoperado, deben colocarse los siguientes comandos:
 
 
 ```
-
 ls /dev/input/
 ls -l /dev/input/js0
 sudo chmod a+rw /dev/input/js0
 roslaunch kobuki_teleop_joy turtle_joy.launch
-
 ```
 
 Y debe verificarse que el control esté conectado a js0.
@@ -82,7 +77,6 @@ Y debe verificarse que el control esté conectado a js0.
 ls -l /dev |grep ttyUSB
 sudo chmod 666 /dev/ttyUSB0
 roslaunch rplidar_ros view_rplidar.launch
-
 ```
 Y nuevamente asegurando que el Lidar fue conectado al puerto USB0.
 
@@ -114,7 +108,7 @@ Por otro lado, la configuración del Kobuki con sensor RPLidar es la siguiente
   caption="Configuración Kobuki con sensor RPLidar">
 </p>
 
-Finalmente, la configuración final es
+Finalmente, la configuración completa es
 
 <p align="center">
 <image
@@ -126,7 +120,7 @@ Finalmente, la configuración final es
 
 ### Videos
 
-Los siguientes videos muestran el funcionamiento de los dos módulos de manera independiente
+Los siguientes videos muestran el funcionamiento de los dos módulos de manera independiente (Hacer click en las imágenes para la redirección a Youtube)
 
 [![Comprehensive Markdown Crash Course](https://img.youtube.com/vi/Ak0MeOStrAI/mqdefault.jpg)](https://youtube.com/shorts/Ak0MeOStrAI "Video Kobuki teleoperado")
 [![Comprehensive Markdown Crash Course](https://img.youtube.com/vi/rHeH8-x1-Hg/mqdefault.jpg)](https://youtu.be/rHeH8-x1-Hg "Video Kobuki con sensor RPLidar")
@@ -153,14 +147,12 @@ Para esto, tanto el computador como la Raspberry se conectaron a una misma red w
 
 ```
 sudo nano /etc/netplan/50-cloud-init.yaml
-
 ```
 
 Y desde el computador buscamos la IP correspondiente a la Raspberry (por ejemplo a través de comandos nmap) y ejecutamos el siguiente comando (para este caso la Raspberry tenía como nombre "unal"):
 
 ```
 ssh unal@<IP>
-
 ```
 
 Una vez ingresada la contraseña de la Raspberry, la terminal utilizada en el computador debería funcionar como consola de la Raspberry.
