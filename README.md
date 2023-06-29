@@ -64,3 +64,5 @@ Y nuevamente asegurando que el Lidar fue conectado al puerto USB0.
 
 Se deberían entonces tener cuatro terminales corriendo los archivos launch. (El launch de kobuki_node corre el master)
 
+![Configuracion Kobuki teleoperado](/ImagenesFRM/Configuracion1.jpg)
+
